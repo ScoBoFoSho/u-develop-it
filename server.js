@@ -58,16 +58,9 @@ app.get('/api/candidates/:id', (req, res) => {
     });
   });
 
-// DELETE a single candidate
-// db.query(`DELETE FROM candidates WHERE id = ?`, 1, (err, result) => {
-//     if (err) {
-//         console.log(err);
-//     } 
-//      console.log(result);
-    
-// });
+
 // Delete a candidate
-app.delete('/api/candidate/:id', (req, res) => {
+app.delete('/api/candidates/:id', (req, res) => {
     const sql = `DELETE FROM candidates WHERE id = ?`;
     const params = [req.params.id];
   
@@ -89,17 +82,17 @@ app.delete('/api/candidate/:id', (req, res) => {
   });
 
 // CREATE a candidate
-const sql = `INSERT INTO candidates (id, first_name, last_name, industry_connected)
-VALUES (?,?,?,?)`;
-const params = [1, 'Ronald', 'Firbank', 1];
+// const sql = `INSERT INTO candidates (id, first_name, last_name, industry_connected)
+// VALUES (?,?,?,?)`;
+// const params = [1, 'Ronald', 'Firbank', 1];
 
-db.query(sql, params, (err, result) => {
-    if (err) {
-        console.log(err);
-    }
-    console.log(result);
+// db.query(sql, params, (err, result) => {
+//     if (err) {
+//         console.log(err);
+//     }
+//     console.log(result);
     
-});
+// });
 
 
 // Keep 2nd to bottom;
