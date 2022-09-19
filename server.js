@@ -11,17 +11,11 @@ app.use(express.json());
 app.use('/api', apiRoutes);
 
 
-  
-
-
-
 // Keep 2nd to bottom;
 // Error Response
 app.use((req, res) => {
     res.status(404).end();
 });
-
-
 
 // THIS CODE AT BOTTOM TO RUN SERVER
 // Start server after DB connection
