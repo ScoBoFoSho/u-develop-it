@@ -3,6 +3,7 @@ const router = express.Router();
 const db = require('../../db/connection');
 const inputCheck = require('../../utils/inputCheck');
 
+
 router.get('/voters', (req, res) => {
     const sql = `SELECT * FROM voters ORDER BY last_name`;
   
@@ -35,7 +36,7 @@ router.get('/voters/:id', (req, res) => {
     });
   });
 
-router.post('/voters', ({ body }, res) => {
+router.post('/voters', ({body}, res) => {
 
     // Data validation
 const errors = inputCheck(body, 'first_name', 'last_name', 'email');
@@ -106,4 +107,4 @@ router.delete('/voters/:id', (req, res) => {
     });
   });
 
-  module.exports = router;
+module.exports = router;
